@@ -1,4 +1,4 @@
-<html lang="en">
+ <html lang="en">
 
 <head>
     <title>Construction Norms</title>
@@ -1114,7 +1114,7 @@
                                         <table id="copy-row" class="hidden">
 
                                             <tr list-item>
-                                                <td><input type="checkbox"></td>
+                                                <td name="check"><input type="checkbox"></td>
                                                 <td name="Activity">Pipe Fabrication</td>
                                                 <td name="Attributes"> </td>
                                                 <td name="Estimate">0.55 <a href="#" data-toggle="modal"
@@ -1122,8 +1122,7 @@
                                                 </td>
                                                 <td name="actions"> <i class="btn btn-sm fa fa-edit"></i>
                                                     <i class="btn btn-sm fa fa-trash"></i>
-                                                    <i class="btn btn-sm fa fa-table" data-toggle="modal"
-                                                        data-target="#myModal"></i>
+
                                                 </td>
                                             </tr>
 
@@ -1131,9 +1130,7 @@
 
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <button type="button" class="mt-2 btn mb-3 btn-danger" disabled
-                                                    id="get-estimate"> Calculate
-                                                    Selected</button>
+
                                             </div>
                                             <div class="col-md-5 text-right">
                                                 <ul class="list-group mb-3">
@@ -1245,7 +1242,7 @@
         var pipeList = {};
         var geographicLocation = {};
 
-        //  fetch("./data.json").then(data => data.json()).then(data => pipeList = data)
+        //fetch("./data.json").then(data => data.json()).then(data => pipeList = data)
         function ajaxget(url) {
             return new Promise(function (resolve, reject) {
                 $.ajax({
@@ -1375,8 +1372,7 @@
             $("#" + $("#activity").val() + " [validate]").each(function (i, e) {
                 $(e).change(function () {
                     $("#submit-list").removeAttr("disabled")
-                    $("#get-estimate").removeAttr("disabled")
-                    $("#save-estimate").removeAttr("disabled")
+
                 })
             })
 
@@ -1536,6 +1532,13 @@
                 }
                 setTableData(activitylist[key], key)
             }
+
+            $("#save-estimate").removeAttr("disabled")
+
+            if ($("#save-estimate").hasClass("hidden")) {
+                $("#save-estimate").removeClass("hidden")
+                $("#download").addClass("hidden")
+            }
         })
 
 
@@ -1596,6 +1599,7 @@
 
         function editRow(event) {
             var activity = $(event.target).attr("activity")
+            activity = activity.split("-")[0]
             var index = $(event.target).attr("index")
             $(".attributes").each(function (i, e) {
                 if (!$(e).hasClass("hidden")) {
@@ -1632,6 +1636,7 @@
             var attributes = data.Attributes.split(" | ")
             var attr = $('[name=Activity]', rowele).text(data.Activity)
             $('[name=Attributes]', rowele).text(data.Attributes)
+            $('[name=check]', rowele).click(checkboxTotalEstimation)
             $('[name=Estimate]', rowele).text(data.Estimate)
             $('[name=actions] .fa-trash', rowele).attr({ "id": index, name: key }).click(deleteRow)
             $('[name=actions] .fa-edit', rowele).attr(
@@ -1660,7 +1665,7 @@
             $(".total-estimation").text(totalEstimation)
         }
 
-        $("#get-estimate").click(checkboxTotalEstimation)
+
 
         function checkboxTotalEstimation() {
             var sum = 0;
@@ -1719,7 +1724,7 @@
                 },
                 error: function (xhr, status, error) {
                     alertPost = false;
-                    console.log(status); console.log(error); alert("error    insert");
+                    console.log(status); console.log(error); alert("error  insert");
                 }
             });
         }
@@ -1787,6 +1792,10 @@
             hiddenElement.target = '_blank';
             hiddenElement.download = "" + $("#project-id").val() + ".csv";
             hiddenElement.click();
+            $("#submit-list").attr("disabled", true)
+            for (var i in activitylist) {
+                activitylist[i].length = 0;
+            }
         }
 
         //////export to excel
