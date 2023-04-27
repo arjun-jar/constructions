@@ -1,0 +1,1816 @@
+<html lang="en">
+
+<head>
+    <title>Construction Norms</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet"
+        href="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/css/w3.css">
+    <link rel="stylesheet"
+        href="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/css/w3-theme-black.css">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/css/bootstrap.min.css">
+
+
+
+    <!-- new links dont rremove -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/css/style.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .total-estimation {
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-main nosidebar mt-0">
+        <div class="w3-row">
+            <div class="w3-container">
+                <h3 class="page-title">Piping</h3>
+                <hr />
+                <div class="banner">
+                    <img src="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/images/piping.jpeg"
+                        alt="" />
+                </div>
+
+                <div class="card bg-light mb-3 validating">
+                    <h4 class="card-header text-dark"><i class="fa fa-clock-o"></i> Calculate Man Hours</h4>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="pull-right badge badge-primary small"> Step 1 </h6>
+                                        <h5 class="card-title"><i class="fa fa-search"></i> Search Criteria:</h5>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4" id="projectid">
+                                                <label class="col-form-label">Workpack ID:</label>
+                                                <input check='need-validate' name="OData__x0069_tp3" id="project-id"
+                                                    type="text" class="form-control form-control-lg"
+                                                    placeholder="123456" />
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label class="col-form-label">Site Specific Requirements &
+                                                    Conditions:</label>
+                                                <select check='need-validate' name="Specific_x0020_Requirements_x002"
+                                                    id="siterequirementcondition" class="form-control form-control-lg"
+                                                    aria-label="Default select example">
+                                                    <option value="">-- Select --</option>
+                                                    <option value="onShoreGreenField">OnShore - Green Field</option>
+                                                    <option value="onShoreBrownField">OnShore - Brown Field</option>
+                                                    <option value="offShoreGreenField">OffShore - Green Field
+                                                    </option>
+                                                    <option value="offShoreBrownField">OffShore - Brown Field
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-4" id="geolocation">
+                                                <label class="col-form-label">Geographic Location:</label>
+                                                <select check='need-validate' name="Geographic_x0020_Location"
+                                                    id="geographic-location" class="form-control form-control-lg"
+                                                    aria-label="Default select example">
+                                                    <option value="">-- Select --</option>
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="pull-right badge badge-primary small"> Step 2 </h6>
+                                        <h5 class="card-title"><i class="fa fa-gear"></i> Choose Activity:</h5>
+                                        <div class="form-row mb-3">
+                                            <div class="form-group col-md-4">
+                                                <label class="col-form-label">Activity:</label>
+                                                <select validate id="activity" class="form-control form-control-lg">
+                                                    <option value="">-- Select --</option>
+                                                    <option value="PipeFabrication"> Fabricated Pipe Spool Installation
+                                                    </option>
+                                                    <option value="ButtWelds"> Butt Welds</option>
+                                                    <option value="ValveInstallation"> Valve Installation</option>
+                                                    <option value="FlangedBoltups"> Flanged Bolt-Ups</option>
+                                                    <option value="WeldPreheating"> Weld Preheating</option>
+                                                    <option value="StressRelieving"> Stress Relieving</option>
+                                                    <option value="Radiography"> Radiography</option>
+                                                    <option value="Hydrotesting"> Hydrotesting</option>
+                                                    <option value="PipeSupports"> Pipe Supports</option>
+                                                    <option value="PipePainting"> Pipe Painting</option>
+                                                    <option value="PipeInsulation"> Pipe Insulation</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="pull-right badge badge-primary small">Step 3</h6>
+                                        <h5 class="card-title"><i class="fa fa-list-alt"></i> Attributes:</h5>
+
+
+                                        <div class="attributes hidden" id="PipeFabrication">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select class="pipe_fabrication-size form-control form-control-lg"
+                                                        validate name="PipeFabrication_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class=" form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="xirm">Sch Std</option>
+                                                        <option value="qptu">Sch XS</option>
+                                                        <option value="mtok">Sch 10</option>
+                                                        <option value="yjbo">Sch 20</option>
+                                                        <option value="OData__x0063_w47">Sch 30</option>
+                                                        <option value="OData__x0072_kr4">Sch 40</option>
+                                                        <option value="ukeo">Sch 60</option>
+                                                        <option value="OData__x0073_sr5">Sch 80</option>
+                                                        <option value="OData__x0078_w91">Sch 100</option>
+                                                        <option value="qxyy">Sch 120</option>
+                                                        <option value="OData__x006d_ul0">Sch 140</option>
+                                                        <option value="mepd">Sch 160</option>
+                                                        <option value="OData__x0073_jg1">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate fields name="Material"
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Joints:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="attributes hidden" id="Insulation">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Size:</label>
+
+                                                    <select name="Insulation_size" validate fields
+                                                        class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Length of pipes:</label>
+
+                                                    <select validate fields class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Insullation thickness:</label>
+
+                                                    <select validate fields class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="attributes hidden" id="ButtWelds">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="ButtWeld_size" fields
+                                                        class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="av7n">Sch Std</option>
+                                                        <option value="OData__x0073_xb7">Sch XS</option>
+                                                        <option value="vm9h">Sch 10</option>
+                                                        <option value="vo7e">Sch 20</option>
+                                                        <option value="x1mi">Sch 30</option>
+                                                        <option value="u3km">Sch 40</option>
+                                                        <option value="OData__x0076_lt7">Sch 60</option>
+                                                        <option value="cegp">Sch 80</option>
+                                                        <option value="xseb">Sch 100</option>
+                                                        <option value="mvfl">Sch 120</option>
+                                                        <option value="l6rk">Sch 140</option>
+                                                        <option value="vg1q">Sch 160</option>
+                                                        <option value="OData__x0063_lb5">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate fields name="Material"
+                                                        class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Joints:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="ValveInstallation">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="ValveInstallation_size" fields
+                                                        class="form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pressure Class:</label>
+                                                    <select validate fields name="Pressure"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="OData__x0070_014">ANSI 150</option>
+                                                        <option value="d5jr">ANSI 3000</option>
+                                                        <option value="qopz">ANSI 600</option>
+                                                        <option value="t9c3">ANSI 900</option>
+                                                        <option value="OData__x0065_ou8">ANSI 1500</option>
+                                                        <option value="ufwh">ANSI 2500</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select name="Material" validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Valves:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="FlangedBoltups">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="FlangedBoltups_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pressure Class:</label>
+
+                                                    <select validate fields name="Pressure"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="xwpi">ANSI 150</option>
+                                                        <option value="zz2b">ANSI 300</option>
+                                                        <option value="ih0x">ANSI 600</option>
+                                                        <option value="gndf">ANSI 900</option>
+                                                        <option value="xxld">ANSI 1500</option>
+                                                        <option value="sdey">ANSI 2500</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select name="Material" validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Joints:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="WeldPreheating">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="WeldPreheating_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="nzoo">Sch Std</option>
+                                                        <option value="m5z5">Sch XS</option>
+                                                        <option value="qo8l">Sch 10</option>
+                                                        <option value="tjkm">Sch 20</option>
+                                                        <option value="OData__x0078_758">Number</option>
+                                                        <option value="xsco">Sch 30</option>
+                                                        <option value="qyze">Sch 40</option>
+                                                        <option value="OData__x0076_tu7">Sch 60</option>
+                                                        <option value="yoyy">Sch 60</option>
+                                                        <option value="tr6q">Sch 100</option>
+                                                        <option value="OData__x006e_z62">Sch 80</option>
+                                                        <option value="mmyz">Sch 120</option>
+                                                        <option value="ujdp">Sch 140</option>
+                                                        <option value="vbon">Sch 160</option>
+                                                        <option value="OData__x006a_j14">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Joints:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="StressRelieving">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="StressRelieving_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="_x0068_g75">Sch Std</option>
+                                                        <option value="f2af">Sch XS</option>
+                                                        <option value="fj9o">Sch 10</option>
+                                                        <option value="d3gn">Sch 20</option>
+                                                        <option value="_x0064_eq6">Sch 30</option>
+                                                        <option value="wnga">Sch 40</option>
+                                                        <option value="b7ue">Sch 60</option>
+                                                        <option value="_x0078_c61">Sch 80</option>
+                                                        <option value="nzju">Sch 100</option>
+                                                        <option value="_x006f_se9">Number</option>
+                                                        <option value="_x006f_zc8">Sch 140</option>
+                                                        <option value="kvsw">Sch 120</option>
+                                                        <option value="_x0079_fr0">Sch 140</option>
+                                                        <option value="piea">Sch 160</option>
+                                                        <option value="_x0066_zo1">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Joints:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="Radiography">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="Radiography_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="p95q">Sch Std</option>
+                                                        <option value="f0hd">Sch XS</option>
+                                                        <option value="zqmy">Sch 10</option>
+                                                        <option value="_x006d_en0">Sch 20</option>
+                                                        <option value="y8g1">Sch 30</option>
+                                                        <option value="waxx">Sch 40</option>
+                                                        <option value="m7vy">Sch 60</option>
+                                                        <option value="yv2f">Sch 80</option>
+                                                        <option value="u2hy">Sch 100</option>
+                                                        <option value="u8h0">Sch 120</option>
+                                                        <option value="tmbr">Sch 140</option>
+                                                        <option value="l8mk">Sch 160</option>
+                                                        <option value="etkp">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select name="Material" validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Length in Meters:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="Hydrotesting">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="Hydrotesting_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Schedule:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="sm6a">Sch Std</option>
+                                                        <option value="x2cv">Sch XS</option>
+                                                        <option value="uw8g">Sch 10</option>
+                                                        <option value="fwlb">Sch 20</option>
+                                                        <option value="_x0075_t15">Sch 30</option>
+                                                        <option value="g28n">Sch 40</option>
+                                                        <option value="v3d5">Sch 60</option>
+                                                        <option value="b8q8">Sch 80</option>
+                                                        <option value="prje">Sch 100</option>
+                                                        <option value="xp7r">Sch 120</option>
+                                                        <option value="_x0079_tf8">Sch 140</option>
+                                                        <option value="nb6o">Sch 160</option>
+                                                        <option value="_x0075_i08">Sch XXS</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select name="Material" validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Length in meters:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="PipeSupports">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Size:</label>
+
+                                                    <select validate name="PipeSupports_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Support Type :</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="dysb">U-Bolt</option>
+                                                        <option value="_x0062_td4">Hanger</option>
+                                                        <option value="o0gp">Simple Support</option>
+                                                        <option value="_x0066_ix4">Heavy Support</option>
+                                                        <option value="itoh">Slide</option>
+                                                        <option value="_x0077_mr4">Guide</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Material:</label>
+
+                                                    <select name="Material" validate fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Number Of Supports:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="PipePainting">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Size:</label>
+
+                                                    <select validate name="PipePainting_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Type Of Coating:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="_x0063_zt5">3-Coat Paint System</option>
+                                                        <option value="bdpq">Dimetcote or Similar</option>
+                                                        <option value="cuns">Galvanizing</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate name="Material" fields
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Pipe Inch Meter:</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attributes hidden" id="PipeInsulation">
+                                            <div class="form-row mb-3" id="">
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Size:</label>
+
+                                                    <select validate name="PipeInsulation_size" fields
+                                                        class="Fabrication-size form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="15">15mm (1/2in)</option>
+                                                        <option value="20">20mm (3/4in)</option>
+                                                        <option value="25">25mm (1in)</option>
+                                                        <option value="40">40mm (1 1/2in)</option>
+                                                        <option value="50">50mm (2in)</option>
+                                                        <option value="80">80mm (3in)</option>
+                                                        <option value="100">100mm (4in)</option>
+                                                        <option value="150">150mm (6in)</option>
+                                                        <option value="200">200mm (8in)</option>
+                                                        <option value="250">250mm (10in)</option>
+                                                        <option value="300">300mm (12in)</option>
+                                                        <option value="350">350mm (14in)</option>
+                                                        <option value="400">400mm (16in)</option>
+                                                        <option value="450">450mm (18in)</option>
+                                                        <option value="500">500mm (20in)</option>
+                                                        <option value="600">600mm (24in)</option>
+                                                        <option value="750">750mm (30in)</option>
+                                                        <option value="900">900mm (36in)</option>
+                                                        <option disabled>--Large Bore--</option>
+                                                        <option value="1050">1050mm (42in)</option>
+                                                        <option value="1200">1200mm (48in)</option>
+                                                        <option value="1500">1500mm (60in)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Insulation Thickness:</label>
+
+                                                    <select validate fields name="Schedule"
+                                                        class="Fabrication-schedule form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="_x0063_zt5">3-Coat Paint System</option>
+                                                        <option value="bdpq">Dimetcote or Similar</option>
+                                                        <option value="cuns">Galvanizing</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Material:</label>
+
+                                                    <select validate fields name="Material"
+                                                        class="Material form-control form-control-lg"
+                                                        aria-label="Default select example">
+                                                        <option value="">-- Select --</option>
+                                                        <option value="1"> Carbon Steel all other Classes </option>
+                                                        <option value="1"> Carbon Steel Normalized </option>
+                                                        <option value="1"> Carbon Steel Galvanized </option>
+                                                        <option value="1"> Nickel Steel </option>
+                                                        <option value="1.3"> Cunifer 10 </option>
+                                                        <option value="1.4"> Stainless Steel </option>
+                                                        <option value="1.4"> Duplex Stainless Steel </option>
+                                                        <option value="1.5"> Titanium </option>
+                                                        <option value="1.2"> Polypropylene Lined Carbon Steel </option>
+                                                        <option value="1.2"> Saran Lined Carbon Steel </option>
+                                                        <option value="1.3"> Monel </option>
+                                                        <option value="1.5"> Molybdenum </option>
+                                                        <option value="1.4"> Hastalloy C </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label class="col-form-label">Length of Pipe (Linear
+                                                        Meters):</label>
+                                                    <input validate fields type="text" name="Joints"
+                                                        class="joints form-control form-control-lg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button type="button" class="save-changes hidden btn btn-danger">Save
+                                            Changes</button>
+                                        <button type="button" disabled id="submit-list" class="btn btn-danger">Add to
+                                            List</button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="pull-right badge badge-primary small"> Step 4 </h6>
+                                        <h5 class="card-title"><i class="fa fa-table"></i> Activity List:</h5>
+                                        <table id="copy-row" class="hidden">
+
+                                            <tr list-item>
+                                                <td><input type="checkbox"></td>
+                                                <td name="Activity">Pipe Fabrication</td>
+                                                <td name="Attributes"> </td>
+                                                <td name="Estimate">0.55 <a href="#" data-toggle="modal"
+                                                        data-target="#divpf"> <i class="ml-2 fa fa-info-circle"></i></a>
+                                                </td>
+                                                <td name="actions"> <i class="btn btn-sm fa fa-edit"></i>
+                                                    <i class="btn btn-sm fa fa-trash"></i>
+                                                    <i class="btn btn-sm fa fa-table" data-toggle="modal"
+                                                        data-target="#myModal"></i>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <button type="button" class="mt-2 btn mb-3 btn-danger" disabled
+                                                    id="get-estimate"> Calculate
+                                                    Selected</button>
+                                            </div>
+                                            <div class="col-md-5 text-right">
+                                                <ul class="list-group mb-3">
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <h5 class="m-0"><i class="fa fa-hourglass-1"></i> Total
+                                                            Estimated Man Hours:</h5>
+                                                        <h2 class="m-0 badge badge-danger badge-pill total-estimation">
+                                                            ...
+                                                        </h2>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-2 text-right">
+                                                <button type="button" id="save-estimate" disabled
+                                                    class="mt-2 btn btn-danger btn-block mb-1">
+                                                    Save Estimates</button>
+                                                <button type="button" id="download"
+                                                    class="mt-2 btn btn-success btn-block hidden mb-1">
+                                                    Export Estimate</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 overflow-310">
+                                                <table id="estimation-table" class="table table-bordered bg-white">
+                                                    <thead>
+                                                        <tr>
+                                                            <th listdata>Select</th>
+                                                            <th>Activity</th>
+                                                            <th>Attributes</th>
+                                                            <th>Estimate</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <iframe id="txtArea1" style="display:none"></iframe>
+    <!-- <footer id="myFooter" style="position: fixed; bottom:0; width:100%; z-index: 10;"> -->
+    <footer id="myFooter">
+        <div class="w3-container w3-theme-l2">
+            &copy; Copyright 2023 Quest-Global. All Rights Reserved
+        </div>
+
+    </footer>
+
+
+    <!-- modals-->
+
+    <!-- Small modal -->
+
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <h4>Please Enter All Fields</h4>
+                </div>
+                <div class="modal-footer" style="border-bottom: 0;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery library -->
+    <script
+        src="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/js/jquery-3.6.3.js"></script>
+    <script
+        src="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/js/main.js"></script>
+
+    <!-- Popper JS -->
+    <script
+        src="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/js/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script
+        src="https://ishareteam1.na.xom.com/sites/ConstCoE/Constnormsdev/SiteAssets/constructionnorms/js/bootstrap.bundle.min.js"></script>
+
+
+    <script type="text/javascript">
+        $("#pageTitle").hide()
+        var pipeList = {};
+        var geographicLocation = {};
+
+        //  fetch("./data.json").then(data => data.json()).then(data => pipeList = data)
+        function ajaxget(url) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    headers: {
+                        accept: "application/json; odata=verbose",
+                    },
+                    success: function (data) {
+                        resolve(data.d)
+                    },
+                    error: function (error) {
+                        alert("error");
+                    },
+                });
+            })
+        }
+
+        function addOptions(data) {
+            $("#geographic-location").html("")
+            $("#geographic-location").append($("<option>").text('-- Select --').val(''))
+            for (var i = 0; i < data.length; i++) {
+                $("#geographic-location").append($("<option>").text(data[i].Title).attr({ "value": data[i].ssjt }))
+            }
+        }
+        $("#siterequirementcondition").change(function (e) {
+            var value = $(e.target).val();
+            var data = geographicLocation[value]
+            addOptions(data)
+
+        })
+
+
+
+        $(document).ready(function () {
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('OnshoreGreenField')/items")
+                .then(function (data) {
+
+                    geographicLocation["onShoreGreenField"] = data.results;
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('onShoreBrownField')/items")
+                .then(function (data) {
+
+                    geographicLocation["onShoreBrownField"] = data.results;
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('offShoreBrownField')/items")
+                .then(function (data) {
+
+                    geographicLocation["offShoreBrownField"] = data.results;
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('offShoreGreenField')/items")
+                .then(function (data) {
+
+                    geographicLocation["offShoreGreenField"] = data.results;
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Fabricated%20Pipe%20Spool%20Installation')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["PipeFabrication"] = data.results;
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('ButtWeld')/items?$top=5000")
+                .then(function (data) {
+                    pipeList["ButtWelds"] = data.results;
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Valve%20Installation')/items?$top=5000")
+                .then(function (data) {
+                    pipeList["ValveInstallation"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Flanged%20Bolt-ups')/items?$top=5000")
+                .then(function (data) {
+                    pipeList["FlangedBoltups"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Weld%20Preheating')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["WeldPreheating"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Stress%20Relieving')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["StressRelieving"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Radiography')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["Radiography"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Hydrotesting')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["Hydrotesting"] = data.results;
+
+                })
+
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Pipe%20Supports')/items?$top=5000")
+                .then(function (data) {
+
+                    pipeList["PipeSupports"] = data.results;
+
+                })
+            ajaxget(_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Pipe%20Painting')/items?$top=5000")
+                .then(function (data) {
+                    pipeList["PipePainting"] = data.results;
+
+                })
+
+
+        })
+
+        $("#activity").change(function (e) {
+            $("#submit-list").attr("disabled", "disabled")
+            $(".attributes").each(function (i, e) {
+                $(e).addClass("hidden")
+            })
+            $("#" + $(e.target).val() + "").removeClass("hidden")
+            $("#" + $("#activity").val() + " [validate]").each(function (i, e) {
+                $(e).change(function () {
+                    $("#submit-list").removeAttr("disabled")
+                    $("#get-estimate").removeAttr("disabled")
+                    $("#save-estimate").removeAttr("disabled")
+                })
+            })
+
+        })
+
+    </script>
+    <script type="text/javascript">
+
+        function romanize(num) {
+            var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }, roman = '', i;
+            for (i in lookup) {
+                while (num >= lookup[i]) {
+                    roman += i;
+                    num -= lookup[i];
+                }
+            }
+            return roman;
+        }
+        function financial(x) {
+            return parseFloat(x).toFixed(2);
+        }
+
+        var ManHoursList = [];
+
+
+
+        function getAttributesCal(data, id) {
+            var userEnterData = {}
+            var ManHourData = {}
+            var size, type, material, joints;
+
+            $("#" + id + " [validate]").each(function (i, e) {
+                if ($(e).attr("name") == "Joints") {
+                    userEnterData[$(e).attr("name")] = $(e).parent().children()[0].textContent + " " + $(e).val()
+                }
+                else {
+                    userEnterData[$(e).attr("name")] = $(e).parent().children()[0].textContent + " " + $("option:selected", $(e)).text()
+                }
+                if (i == 0) {
+                    size = $(e).val()
+                }
+                if (i == 1) {
+                    type = $(e).val()
+                }
+                if (i == 2) {
+                    material = $(e).val()
+                }
+                if (i == 3) {
+                    joints = $(e).val()
+                }
+            })
+
+
+            var values = 1;
+            values *= +joints || 1;
+            values *= +material || 1;
+
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].Title == size) {
+                    values *= Number(data[i][type]) || 1
+                }
+
+            }
+
+
+            var Title = $("#project-id").val();
+            var geoLocationInternelName = $("#geographic-location").attr("name")
+            var geoLocation = $("#geographic-location").val()
+            var sitereqInterName = $("#siterequirementcondition").attr("name")
+            var siteReq = $("#siterequirementcondition").val();
+            ManHourData["OData__x0069_tp3"] = Title;
+            ManHourData[geoLocationInternelName] = geoLocation;
+            ManHourData[sitereqInterName] = siteReq;
+            ManHourData["Activity"] = id;
+            var attr = ""
+
+            for (var i in userEnterData) {
+                attr += userEnterData[i] + " | "
+            }
+
+            ManHourData["Attributes"] = attr.slice(0, -3)
+
+
+            ManHourData["Estimate"] = financial(values)
+            return ManHourData;
+        }
+
+
+        var activitylist = {
+            "PipeFabrication": [],
+            "ButtWelds": [],
+            "ValveInstallation": [],
+            "FlangedBoltups": [],
+            "WeldPreheating": [],
+            "StressRelieving": [],
+            "Radiography": [],
+            "Hydrotesting": [],
+            "PipeSupports": [],
+            "PipePainting": [],
+            "PipeInsulation": []
+        };
+
+        function validate() {
+            var attrId = $("#activity").val();
+            var isValid = false;
+            if (!attrId) return isValid
+            $("#" + attrId + " [validate]").each(function (i, e) {
+                if ($(e).val()) {
+                    isValid = true;
+                    if ($(e).hasClass("is-invalid")) {
+                        $(e).removeClass("is-invalid")
+                    }
+                }
+                else {
+                    $(e).addClass("is-invalid")
+                    isValid = false;
+                }
+            })
+            return isValid
+        }
+
+
+        function needValidate() {
+            var isValid = false;
+            $('[check=need-validate]').each(function (i, e) {
+
+                if ($(e).val()) {
+                    isValid = true;
+                    if ($(e).hasClass("is-invalid")) {
+                        $(e).removeClass("is-invalid")
+                    }
+                }
+                else {
+                    $(e).addClass("is-invalid")
+                    isValid = false;
+                }
+            })
+            return isValid
+        }
+
+        $("#submit-list").click(function () {
+            if (!needValidate() || !validate()) {
+                $(".modal").modal("show")
+            }
+            if (!needValidate()) return
+            if (!validate()) return
+
+            var res = getAttributesCal(pipeList[$("#activity").val()], $("#activity").val())
+
+            activitylist[$("#activity").val()].push(res)
+
+            $("#estimation-table tbody").html("")
+            for (var key in activitylist) {
+
+                if (activitylist[key].length) {
+                    checkDuplicates(activitylist[key])
+                }
+                setTableData(activitylist[key], key)
+            }
+        })
+
+
+        function checkDuplicates(data) {
+            for (var i = 0; i < data.length; i++) {
+                for (var j = i + 1; j < data.length; j++) {
+                    var attr1 = data[i].Attributes.split(" | ")
+                    var attr2 = data[j].Attributes.split(" | ")
+                    if (checkAtrributes(attr1, attr2)) {
+                        if (confirm("Same Attributes are already exist. Please edit in the existing list.")) {
+                            data.splice(i, 1)
+                        }
+                        else {
+                            data.splice(j, 1)
+                        }
+                        return
+                    }
+                }
+
+            }
+
+        }
+
+
+
+        function modifyActivity(res, duplicate) {
+            res.Estimate = +res.Estimate + Number(duplicate.Estimate)
+            var a = res.Attributes.split(" | ")
+            var b = duplicate.Attributes.split(" | ")
+            a[a.length - 1] = +a[a.length - 1] + +b[b.length - 1]
+            res.Attributes = a.join(" | ")
+            return res
+        }
+
+
+
+        function checkAtrributes(activity1, activity2) {
+            var flag = false;
+            console.log(activity1, activity2);
+            for (var i = 0; i < activity1.length - 1; i++) {
+                if (activity1[i] === activity2[i]) {
+                    flag = true;
+                }
+                else {
+                    flag = false
+                    return
+                };
+            }
+            return flag;
+        }
+
+        function setTableData(itmes, key) {
+            itmes.forEach(function (data, i) {
+                bindTableData(data, i, key)
+            })
+        }
+
+
+        function editRow(event) {
+            var activity = $(event.target).attr("activity")
+            var index = $(event.target).attr("index")
+            $(".attributes").each(function (i, e) {
+                if (!$(e).hasClass("hidden")) {
+                    $(e).addClass("hidden")
+                }
+            })
+            $("#" + activity + "").removeClass("hidden")
+            $("#activity").val(activity)
+            $(".save-changes").removeClass("hidden").attr("id", index).click(saveChanges)
+            $("#submit-list").addClass("hidden")
+            document.querySelector("#project-id").scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+
+
+
+
+        function saveChanges(event) {
+            $("#submit-list").removeClass("hidden")
+            $(".save-changes").addClass("hidden")
+            var index = $(event.target).attr("id")
+            var attrId = $("#activity").val();
+            var newChanges = getAttributesCal(pipeList[attrId], attrId)
+            $("#estimation-table tbody").html("")
+            activitylist[attrId][index] = newChanges;
+            for (var key in activitylist) {
+                setTableData(activitylist[key], key)
+            }
+        }
+
+        function bindTableData(data, index, key) {
+            var activ = data.Activity.split("-")
+            data.Activity = activ[0] + "-" + romanize(index + 1);
+            var rowele = $("#copy-row tr").clone().removeClass("hidden")
+            var attributes = data.Attributes.split(" | ")
+            var attr = $('[name=Activity]', rowele).text(data.Activity)
+            $('[name=Attributes]', rowele).text(data.Attributes)
+            $('[name=Estimate]', rowele).text(data.Estimate)
+            $('[name=actions] .fa-trash', rowele).attr({ "id": index, name: key }).click(deleteRow)
+            $('[name=actions] .fa-edit', rowele).attr(
+                {
+                    index: index,
+                    "activity": data.Activity,
+                    "estimate": data.Estimate,
+                    "workpack-id": data.OData__x0069_tp3,
+                    "geo-loc": data.Geographic_x0020_Location,
+                    "specific-req": data.Specific_x0020_Requirements_x002,
+                    "joints": attributes[attributes.length - 1]
+                })
+                .click(editRow)
+            $("#estimation-table").append(rowele)
+            totalEstimation()
+        }
+
+
+
+        function totalEstimation() {
+            var totalEstimation = 0;
+            $("[name=Estimate]").not(":first").each(function (i, e) {
+                totalEstimation += Number($(e).text())
+            })
+            totalEstimation = financial(totalEstimation)
+            $(".total-estimation").text(totalEstimation)
+        }
+
+        $("#get-estimate").click(checkboxTotalEstimation)
+
+        function checkboxTotalEstimation() {
+            var sum = 0;
+            if ($("#estimation-table td input:checked").length) {
+                $("#estimation-table td input:checked").each(function (i, e) {
+                    sum += Number($(e).parent().parent().find("[name=Estimate]").text())
+                })
+
+                $(".total-estimation").text(financial(sum))
+            }
+            else totalEstimation()
+        }
+
+        function deleteRow(event) {
+            $(event.target).parent().parent().remove()
+
+            var index = $(event.target).attr("id")
+            var key = $(event.target).attr("name")
+            //  activitylist = activitylist.filter((data, i) => i != deleteId)
+            activitylist[key].splice(index, 1)
+            $("#estimation-table tbody").html("")
+            for (var key in activitylist) {
+                setTableData(activitylist[key], key)
+            }
+            totalEstimation()
+        }
+
+
+
+        ///////////////////////////////////////////// post method for saving the list into sharepointlist
+
+        function setData(activityData) {
+            var metadata = { 'type': 'SP.Data.PipingActivityListListItem' }
+            activityData.__metadata = metadata;
+            postDataToList(JSON.stringify(activityData))
+        }
+
+        var alertPost = false;
+
+        function postDataToList(data1) {
+
+            jQuery.ajax({
+                url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('PipingActivityList')/items",
+                type: "POST",
+                data: data1,
+                headers: {
+                    "X-HTTP-Method": "POST",
+                    "accept": "application/json;odata=verbose",
+                    "content-type": "application/json;odata=verbose",
+                    "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                    "IF-MATCH": "*"
+                },
+                success: function () {
+                    alertPost = true;
+                    console.log("success");
+                },
+                error: function (xhr, status, error) {
+                    alertPost = false;
+                    console.log(status); console.log(error); alert("error    insert");
+                }
+            });
+        }
+
+        $("#save-estimate").click(function () {
+            postDatafunc(activitylist)
+
+        })
+
+
+        function postDatafunc(data) {
+            for (var key in data) {
+                if (data[key].length) {
+                    for (var i = 0; i < data[key].length; i++) {
+                        setData(data[key][i])
+                    }
+                }
+            }
+            setTimeout(function () {
+
+                if (alertPost) {
+                    alert("save successfully")
+                    $("#save-estimate").addClass("hidden")
+
+                    $("#download").removeClass("hidden").click(xlsGenerate)
+                }
+            }, 2000)
+        }
+
+
+        function xlsGenerate() {
+            var txtArea1 = document.querySelector("#txtArea1");
+            var csv = "";
+            for (var activity in activitylist) {
+                if (activitylist[activity].length) {
+                    csv += generateCSV(activitylist[activity], activity)
+                }
+            }
+            console.log(csv);
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer
+            {
+                if (typeof Blob !== "undefined") {
+                    //use blobs if we can
+                    tab_text = [csv];
+                    //convert to array
+                    var blob1 = new Blob(tab_text, {
+                        type: "text/html"
+                    });
+                    window.navigator.msSaveBlob(blob1, $("#project-id").val() + ".csv");
+                } else {
+                    txtArea1.document.open("txt/html", "replace");
+                    txtArea1.document.write(csv);
+                    txtArea1.document.close();
+                    txtArea1.focus();
+                    txtArea1.document.execCommand("SaveAs", true, "" + $("#project-id").val() + ".csv");
+
+                }
+            }
+            else                 //other browser not tested on IE 11
+                var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = "" + $("#project-id").val() + ".csv";
+            hiddenElement.click();
+        }
+
+        //////export to excel
+        function generateCSV(activity, activityName) {
+            var xldata = activityName + " :\n"
+            xldata += 'Workpack ID, Geographic Location, Site Specific Requirements & Conditions, Activity,Attributes,Estimate\n';
+
+            for (var i = 0; i < activity.length; i++) {
+
+                var data = [];
+                for (var key in activity[i]) {
+                    if (key !== "__metadata") {
+                        data.push(activity[i][key])
+                    }
+                }
+                xldata += data.join(',');
+                xldata += "\n";
+            }
+            return xldata;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
